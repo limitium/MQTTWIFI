@@ -24,7 +24,7 @@
         }
     ],
     "version": "1.0.0",
-    "license": "MIT License",
+    "license": "MIT",
     "frameworks": "arduino",
     "platforms": "espressif8266",
     "examples": [
