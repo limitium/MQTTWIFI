@@ -1,0 +1,33 @@
+  
+{
+    "name":"MQTTWIFI",
+    "description":"Robust mqtt client over wifi for ESP8266",
+    "keywords":"ESP8266,ESP8266-library,mqtt,wifi",
+    "authors":
+    {
+      "name": "Sergey Belov",
+      "maintainer": true
+    },
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/limitium/mqttwifi.git"
+    },
+    "dependencies":[
+        {
+            "name": "PubSubClient",
+            "version": "2.7"
+        },
+        {
+            "name":"log4Esp@1.0.2",
+            "version": "https://github.com/hunsalz/log4Esp.git#f4ef0f17980a0133cafb0f88358e208bc2fd93b1"
+        }
+    ],
+    "version": "1.0.0",
+    "license": "MIT License",
+    "frameworks": "arduino",
+    "platforms": "espressif8266",
+    "examples": [
+      "examples/*/*.ino"
+    ]
+  }
