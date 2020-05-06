@@ -13,7 +13,7 @@ env:
 install:
     - pip install -U platformio
     - platformio update
-    - platformio lib install
+    - platformio -g lib install 89 https://github.com/hunsalz/log4Esp.git#f4ef0f17980a0133cafb0f88358e208bc2fd93b1
 
 script:
     - platformio ci --lib="." --board=esp12e
