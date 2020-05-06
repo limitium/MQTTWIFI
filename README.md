@@ -11,7 +11,7 @@ build on top of arduino mqtt client library [pubsubclient](http://pubsubclient.k
 ## Quick start
 
 ```c++
-    MQTTWIFI::MQTTWIFI mqttwifi = MQTTWIFI("wifiname", "password", "broker.mqttdashboard.com", 1883);
+    MQTTWIFI::MQTTWIFI mqttwifi = MQTTWIFI::MQTTWIFI("wifiname", "password", "broker.mqttdashboard.com", 1883);
     void setup()
     {
         mqttwifi.init();
