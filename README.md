@@ -1,4 +1,4 @@
-# MQTTWIFI - robust mqtt client over wifi for ESP8266
+# MQTTWIFI - robust mqtt client over wifi for ESP8266 and ESP32
 build on top of arduino mqtt client library [pubsubclient](http://pubsubclient.knolleary.net/)
 
 [![Build Status](https://travis-ci.org/limitium/MQTTWIFI.svg?branch=master)](https://travis-ci.org/limitium/MQTTWIFI)
