@@ -6,7 +6,7 @@ build on top of arduino mqtt client library [pubsubclient](http://pubsubclient.k
 
 ## Features
 - Simplest usage and api ever
-- Aggresive wifi and mqtt connection sustenance
+- Aggressive wifi and mqtt connection sustenance
 
 ## Quick start
 
