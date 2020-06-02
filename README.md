@@ -35,7 +35,6 @@ build on top of arduino mqtt client library [pubsubclient](http://pubsubclient.k
 
 ## Limitations
 * all from underlying library (pubsubclient)[https://github.com/knolleary/pubsubclient#limitations]
-* only esp8266 support because of (log4esp)[https://github.com/hunsalz/log4Esp#disclaimer]
 
 ## License
 MQTTWIFI is open-source software licensed under the [MIT license](http://opensource.org/licenses/MIT)
