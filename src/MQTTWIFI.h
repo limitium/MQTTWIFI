@@ -14,7 +14,6 @@ namespace MQTTWIFI
 #define SUB_CALLBACK_SIGNATURE std::function<void(const char *)>
 
 unsigned long MQTT_RECONNECT_TIMEOUT = 5000;
-const char *clientId = "MQTTWIFI" __DATE__ " " __TIME__;
 
 struct cmp_str
 {
@@ -28,10 +27,11 @@ class MQTTWIFI
 {
 public:
     MQTTWIFI() {}
-    MQTTWIFI(const char *SSID, const char *password, const char *domain, uint16_t port)
+    MQTTWIFI(const char *SSID, const char *password, const char *domain, uint16_t port, const char *clientId)
     {
         this->SSID = SSID;
         this->password = password;
+        this->clientId = clientId;
 
         client = new WiFiClient();
         mqtt = new PubSubClient(*client);
@@ -112,6 +112,8 @@ public:
 private:
     const char *SSID;
     const char *password;
+    const char *clientId;
+
     WiFiClient *client;
     PubSubClient *mqtt;
 
@@ -123,7 +125,11 @@ private:
 
     boolean reconnectMQTT()
     {
-        if (mqtt->connect(clientId))
+        std::string clientId("MQTTWIFI_");
+        clientId += this->clientId;
+        clientId += "_";
+        clientId += random(0, 100);
+        if (mqtt->connect(clientId.c_str()))
         {
             log.verbose(F("Connected to MQTT"));
             for (const auto &pair : callbacks)
