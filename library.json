@@ -23,7 +23,7 @@
             "version": "https://github.com/hunsalz/log4Esp.git#f4ef0f17980a0133cafb0f88358e208bc2fd93b1"
         }
     ],
-    "version": "1.1.0",
+    "version": "1.1.1",
     "license": "MIT",
     "frameworks": "arduino",
     "platforms": [

@@ -69,9 +69,17 @@ public:
                 if (reconnectMQTT())
                 {
                     lastReconnectMQTTAttempt = 0;
+                    reconnectMQTTAttempts = 0;
                 }
                 else
                 {
+#if defined(ESP32)
+                    reconnectMQTTAttempts++;
+                    if (mqtt->state() == -2 && reconnectMQTTAttempts > 50)
+                    {
+                        ESP.restart();
+                    }
+#endif
                     log.verbose(F("Failed rc=%d"), mqtt->state());
                 }
             }
@@ -119,6 +127,7 @@ private:
 
     boolean con = false;
     unsigned long lastReconnectMQTTAttempt;
+    unsigned int reconnectMQTTAttempts;
     std::map<const char *, SUB_CALLBACK_SIGNATURE, cmp_str> callbacks;
 
     Logger log = Logger("MQTTWIFI");
